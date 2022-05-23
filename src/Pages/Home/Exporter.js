@@ -4,7 +4,7 @@ const Exporter = () => {
     return (
         <div className='bg-slate-50'>
             <div>
-            <h1 className='text-4xl mt-6 uppercase font-bold text-orange-400'><span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
+            <h1 className='text-4xl mt-6 uppercase font-bold text-orange-400'><span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-400 relative inline-block mr-2">
     <span class="relative text-white">Annaba</span>
   </span>Hand Tools</h1><h1 className='mt-3 mb-2 text-xl'>Manufacturer & Exporter</h1>
         </div>
