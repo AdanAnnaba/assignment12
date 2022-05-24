@@ -1,18 +1,18 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
-const Login = () => {
-  const [
-    signInWithEmailAndPassword,
-    user,
-    loading,
-    error,
-  ] = useSignInWithEmailAndPassword(auth);
+const SignUp = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -25,7 +25,7 @@ const Login = () => {
   }
 
   const onSubmit = data => {
-    signInWithEmailAndPassword(data.email, data.password)
+    createUserWithEmailAndPassword(data.email, data.password)
   }
   
     return (
@@ -36,6 +36,25 @@ const Login = () => {
        
         <form form onSubmit={handleSubmit(onSubmit)}>
         <div class="form-control w-full max-w-xs">
+        <label class="label">
+        <span class="label-text">Enter Your Name</span>
+        </label>
+        <input type="text"
+         placeholder="Name"
+          class="input input-bordered w-full max-w-xs"
+          {...register("name", {
+            required:{
+              value: true,
+              message: 'Name is required'
+            },
+            pattern: /[A-Za-z]{3}/,
+            message: 'Please enter a valid email'
+          })}
+          />
+        <label class="label">
+        {errors.name?.type === 'required' && <span class="label-text-alt text-red-500">{errors.name.message}</span>}
+        
+        </label>
         <label class="label">
         <span class="label-text">Enter Your Email</span>
         </label>
@@ -84,9 +103,6 @@ const Login = () => {
         <div class="form-control">
           <button onClick={()=>signInWithGoogle()} class="btn btn-primary">Signin With Google</button>
         </div>
-        <div>
-          <span><Link to='/signup'>Please Sign Up</Link></span>
-        </div>
       </div>
     </div>
   </div>
@@ -94,4 +110,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUp;

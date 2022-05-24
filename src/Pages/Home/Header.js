@@ -25,7 +25,6 @@ const Header = () => {
             user? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
           }
           <li><Link to='/about'>About</Link></li>
-          <li><Link to='/addproduct'>Add Product</Link></li>
         {
           user? <li><button className='mr-3' onClick={logout}>Logout</button></li> : <li><Link to='/login' className='mr-3'>Login</Link></li>
         }
