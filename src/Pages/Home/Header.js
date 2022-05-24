@@ -21,6 +21,9 @@ const Header = () => {
         </div>
         <div class="flex-none gap-2">
         <ul className='flex gap-3 text-white'>
+          {
+            user? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
+          }
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/addproduct'>Add Product</Link></li>
         {

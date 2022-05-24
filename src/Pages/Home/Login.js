@@ -2,14 +2,27 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+
+  if(user){
+    navigate(from,{replace:true});
+  }
+
+
+
   const onSubmit = data => {
     console.log(data);
   }
+  
     return (
         <div class="hero min-h-screen bg-base-200">
         <div class="hero-content flex-col lg:flex-row-reverse">
