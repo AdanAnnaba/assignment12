@@ -17,8 +17,6 @@ const Login = () => {
     navigate(from,{replace:true});
   }
 
-
-
   const onSubmit = data => {
     console.log(data);
   }

@@ -2,12 +2,13 @@ import { Routes , Route} from 'react-router-dom';
 import './App.css';
 import About from './Pages/About/About';
 import AddProduct from './Pages/AddProduct/AddProduct';
-import AllProducts from './Pages/Home/AllProducts';
 import Dashboard from './Pages/Home/Dashboard';
 import Header from './Pages/Home/Header';
 import Home from './Pages/Home/Home';
+import AllProducts from './Pages/Home/AllProducts';
 import Login from './Pages/Home/Login';
 import ReqAuth from './Pages/Home/ReqAuth';
+import Reviews from './Pages/Home/Reviews';
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/addproduct' element={<ReqAuth><AddProduct></AddProduct></ReqAuth>}></Route>
-        <Route path='/dashboard' element={<ReqAuth><Dashboard><AllProducts></AllProducts></Dashboard></ReqAuth>}></Route>
+        <Route path='/dashboard' element={<ReqAuth><Dashboard></Dashboard></ReqAuth>}>
+          <Route index element={<AllProducts></AllProducts>}></Route>
+          <Route path='reviews' element={<Reviews></Reviews>}></Route>
+        </Route>
       </Routes>
     </div>
   );
