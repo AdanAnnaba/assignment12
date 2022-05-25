@@ -42,7 +42,7 @@ const SignUp = () => {
         <input type="text"
          placeholder="Name"
           class="input input-bordered w-full max-w-xs"
-          {...register("displayName", {
+          {...register("name", {
             required:{
               value: true,
               message: 'Name is required'

@@ -7,6 +7,7 @@ import Header from './Pages/Home/Header';
 import Home from './Pages/Home/Home';
 import AllProducts from './Pages/Home/AllProducts';
 import Login from './Pages/Home/Login';
+import SignUp from './Pages/Home/SignUp';
 import ReqAuth from './Pages/Home/ReqAuth';
 import Reviews from './Pages/Home/Reviews';
 import Purchase from './Pages/Home/Purchase';
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/purchase' element={<ReqAuth><Purchase></Purchase></ReqAuth>}></Route>
         <Route path='/dashboard' element={<ReqAuth><Dashboard></Dashboard></ReqAuth>}>
           <Route index element={<AllProducts></AllProducts>}></Route>
