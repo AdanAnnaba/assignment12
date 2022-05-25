@@ -14,6 +14,7 @@ import ReqAuth from './Pages/Home/ReqAuth';
 import Reviews from './Pages/Home/Reviews';
 import Purchase from './Pages/Home/Purchase';
 import Profile from './Pages/Home/Profile';
+import NotFound from './Pages/Home/NotFound';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path='profile' element={<Profile></Profile>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
         </Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>

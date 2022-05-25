@@ -4,6 +4,8 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 
 
 const SignUp = () => {
@@ -22,6 +24,9 @@ const SignUp = () => {
 
   if(user || guser){
     navigate(from,{replace:true});
+    toast.success("You are login successfully", {
+      position: toast.POSITION.TOP_RIGHT
+    });
   }
 
   const onSubmit = data => {
