@@ -9,7 +9,7 @@ import AllProducts from './Pages/Home/AllProducts';
 import Login from './Pages/Home/Login';
 import ReqAuth from './Pages/Home/ReqAuth';
 import Reviews from './Pages/Home/Reviews';
-import SignUp from './Pages/Home/SignUp';
+import Purchase from './Pages/Home/Purchase';
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/purchase' element={<ReqAuth><Purchase></Purchase></ReqAuth>}></Route>
         <Route path='/dashboard' element={<ReqAuth><Dashboard></Dashboard></ReqAuth>}>
           <Route index element={<AllProducts></AllProducts>}></Route>
           <Route path='reviews' element={<Reviews></Reviews>}></Route>

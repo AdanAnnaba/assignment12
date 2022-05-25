@@ -11,7 +11,6 @@ const Header = () => {
     signOut(auth);
   };
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
 
     return (
         <div class="navbar bg-primary">
@@ -21,9 +20,9 @@ const Header = () => {
         </div>
         <div class="flex-none gap-2">
         <ul className='flex gap-3 text-white'>
-          {
-            user? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
-          }
+          
+            <li><Link to='/dashboard'>Dashboard</Link></li>
+          
           <li><Link to='/about'>About</Link></li>
         {
           user? <li><button className='mr-3' onClick={logout}>Logout</button></li> : <li><Link to='/login' className='mr-3'>Login</Link></li>

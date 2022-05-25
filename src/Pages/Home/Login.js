@@ -20,7 +20,7 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
-  if(user){
+  if(user || guser){
     navigate(from,{replace:true});
   }
 

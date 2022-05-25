@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -20,7 +20,7 @@ const SignUp = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
-  if(user){
+  if(user || guser){
     navigate(from,{replace:true});
   }
 
@@ -42,7 +42,7 @@ const SignUp = () => {
         <input type="text"
          placeholder="Name"
           class="input input-bordered w-full max-w-xs"
-          {...register("name", {
+          {...register("displayName", {
             required:{
               value: true,
               message: 'Name is required'
@@ -102,6 +102,9 @@ const SignUp = () => {
         <div class="divider mt-0 mb-0">OR</div>
         <div class="form-control">
           <button onClick={()=>signInWithGoogle()} class="btn btn-primary">Signin With Google</button>
+        </div>
+        <div>
+          <span><Link to='/login'>Please Sign Up</Link></span>
         </div>
       </div>
     </div>
