@@ -4,6 +4,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
@@ -22,7 +23,16 @@ const Login = () => {
 
   if(user || guser){
     navigate(from,{replace:true});
+    toast.success("You are login successfully", {
+      position: toast.POSITION.TOP_RIGHT
+    });
   }
+
+if(error){
+  toast.error("Please Check Your Email And Password", {
+    position: toast.POSITION.TOP_RIGHT
+  });
+}
 
   const onSubmit = data => {
     signInWithEmailAndPassword(data.email, data.password)
@@ -75,8 +85,8 @@ const Login = () => {
         <label class="label">
         {errors.password?.type === 'required' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
         {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
-        
         </label>
+        <div><p>{Error}</p></div>
         <input className='btn btn-primary' type="submit" />
         </div>
         </form>

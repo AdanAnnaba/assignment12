@@ -17,7 +17,7 @@ const CardInfo = () => {
     return (
         <div>
             <p>data: {products.length}</p>
-        <div className='grid grid-cols-3 gap-2 ml-12 mt-3'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-2 ml-12 mt-3'>
             
             {
                 products.map(product=><Card key={product._id} product={product} setSingle={setSingle}></Card>)

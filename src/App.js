@@ -1,5 +1,7 @@
 import { Routes , Route} from 'react-router-dom';
 import './App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import About from './Pages/About/About';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import Dashboard from './Pages/Home/Dashboard';
@@ -11,6 +13,7 @@ import SignUp from './Pages/Home/SignUp';
 import ReqAuth from './Pages/Home/ReqAuth';
 import Reviews from './Pages/Home/Reviews';
 import Purchase from './Pages/Home/Purchase';
+import Profile from './Pages/Home/Profile';
 
 function App() {
   return (
@@ -25,10 +28,13 @@ function App() {
         <Route path='/dashboard' element={<ReqAuth><Dashboard></Dashboard></ReqAuth>}>
           <Route index element={<AllProducts></AllProducts>}></Route>
           <Route path='reviews' element={<Reviews></Reviews>}></Route>
+          <Route path='profile' element={<Profile></Profile>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
         </Route>
       </Routes>
+      <ToastContainer></ToastContainer>
     </div>
+    
   );
 }
 
