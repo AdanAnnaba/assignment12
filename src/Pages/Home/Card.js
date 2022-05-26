@@ -11,8 +11,7 @@ const Card = ({product, setSingle}) => {
     <h2 class="card-title">Shoes!{product.product.name}</h2>
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div class="card-actions justify-center">  
-    <button class="btn btn-primary w-96"  onClick={()=>setSingle(product)}>Done</button>
-    <Link to='/purchase' onClick={()=>setSingle(product)} class="btn btn-primary w-96">Purchase</Link>   
+    <label for="my-modal-6" class="btn btn-primary" onClick={()=>setSingle(product)}>Buy Now</label>
     </div>
   </div>
 </div>

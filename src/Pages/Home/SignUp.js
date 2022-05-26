@@ -5,6 +5,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { updateProfile } from 'firebase/auth';
 
 
 
@@ -31,6 +32,7 @@ const SignUp = () => {
 
   const onSubmit = data => {
     createUserWithEmailAndPassword(data.email, data.password)
+    console.log(data);
   }
   
     return (
