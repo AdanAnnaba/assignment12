@@ -4,15 +4,33 @@ import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-  const onSubmit = data => {
+    const imageBbKey = '38699dc715ebdd8bc748571a5d704242'
+  const onSubmit = async data => {
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append('image', image);
+    const url = `https://api.imgbb.com/1/upload?key=${imageBbKey}`;
+
+    axios.post(`${url}`,(formData))
+    .then(res=>{
+      const image = res.data;
+      if(image.success){
+        const img = image.data.url;
+        
         const product = {
           name: data.name,
-          email: data.email
+          mquantity: data.mquantity,
+          description: data.description,
+          aquantity: data.aquantity,
+          image: img
         }
         reset();
+        axios.post(`http://localhost:5000/product`,(product));
         console.log(product);
+      }
+
+  })     
         
-        axios.post(`http://localhost:5000/product`,{product});
   }
 
     return (

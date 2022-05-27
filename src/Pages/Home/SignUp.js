@@ -28,11 +28,11 @@ const [token] = Token(user || guser)
 
 
 
-  if(user || guser){
-    // navigate(from,{replace:true});
-    // toast.success("You are login successfully", {
-    //   position: toast.POSITION.TOP_RIGHT
-    // });
+  if(token){
+    navigate(from,{replace:true});
+    toast.success("You are login successfully", {
+      position: toast.POSITION.TOP_RIGHT
+    });
   }
 
   const onSubmit = data => {
