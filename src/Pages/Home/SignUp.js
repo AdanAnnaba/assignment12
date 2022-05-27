@@ -5,7 +5,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { updateProfile } from 'firebase/auth';
+import Token from '../Hooks/Token';
 
 
 
@@ -23,7 +23,9 @@ const SignUp = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
-  if(user || guser){
+      const [token] = Token(user || guser)
+
+  if(token){
     navigate(from,{replace:true});
     toast.success("You are login successfully", {
       position: toast.POSITION.TOP_RIGHT

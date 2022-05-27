@@ -6,7 +6,6 @@ import Purchase from './Purchase';
 const CardInfo = () => {
     const [products, setProducts] = useState([])
     const [single, setSingle] = useState(null)
-    console.log(single);
     useEffect(()=>{
         axios.get(`http://localhost:5000/product`)
         .then(res=>{
