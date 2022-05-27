@@ -23,18 +23,20 @@ const SignUp = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
-      const [token] = Token(user || guser)
+  
+const [token] = Token(user || guser)
 
-  if(token){
-    navigate(from,{replace:true});
-    toast.success("You are login successfully", {
-      position: toast.POSITION.TOP_RIGHT
-    });
+
+
+  if(user || guser){
+    // navigate(from,{replace:true});
+    // toast.success("You are login successfully", {
+    //   position: toast.POSITION.TOP_RIGHT
+    // });
   }
 
   const onSubmit = data => {
     createUserWithEmailAndPassword(data.email, data.password)
-    console.log(data);
   }
   
     return (
