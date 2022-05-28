@@ -12,7 +12,6 @@ const Header = () => {
     localStorage.removeItem('accesstoken')
   };
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
 
     return (
         <div class="navbar bg-amber-300">
@@ -28,6 +27,7 @@ const Header = () => {
             }
           
           <li><Link to='/about'>About</Link></li>
+          <li><Link to='/blogs'>Blogs</Link></li>
         {
           user? <li><button className='mr-3' onClick={logout}><span>{user.displayName}</span>Logout</button></li> : <li><Link to='/login' className='mr-3'>Login</Link></li>
         }

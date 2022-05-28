@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { format } from 'date-fns';
 import { toast } from 'react-toastify';
 
 const Purchase = ({single}) => {
