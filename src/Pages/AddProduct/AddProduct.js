@@ -25,7 +25,7 @@ const AddProduct = () => {
           image: img
         }
         reset();
-        axios.post(`http://localhost:5000/product`,(product));
+        axios.post(`https://salty-waters-02832.herokuapp.com/product`,(product));
         console.log(product);
       }
 
@@ -45,8 +45,6 @@ const AddProduct = () => {
           class="input input-bordered w-full max-w-xs"
           {...register("name",)}
           />
-      
-        
         <input type="text"
          placeholder="Minimum Quantity"
           class="input input-bordered w-full max-w-xs"

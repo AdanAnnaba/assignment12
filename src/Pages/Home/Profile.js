@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from './Loading';
@@ -11,7 +10,7 @@ const Profile = () => {
     
     useEffect(()=>{
      if(user){
-        fetch(`http://localhost:5000/booking?email=${user.email}`,{
+        fetch(`https://salty-waters-02832.herokuapp.com/booking?email=${user.email}`,{
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accesstoken')}`
