@@ -4,6 +4,7 @@ import CardInfo from './CardInfo';
 import Exporter from './Exporter';
 import Footer from './Footer';
 import Prefer from './Prefer';
+import PriceList from './PriceList';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
            <Exporter></Exporter>
            <CardInfo></CardInfo>
            <Prefer></Prefer>
+           <PriceList></PriceList>
            <Footer></Footer>
         </div>
     );

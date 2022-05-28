@@ -10,7 +10,7 @@ const Card = ({product, setSingle}) => {
     <h2 class="card-title">Shoes!{product.name}</h2>
     <p>Qty: {product.aquantity}</p>
     <div class="card-actions justify-center">  
-    <label for="my-modal-6" class="btn btn-primary" onClick={()=>setSingle(product)}>Buy Now</label>
+    <label for="my-modal-6" class="btn bg-orange-300 border-0" onClick={()=>setSingle(product)}>Buy Now</label>
     </div>
   </div>
 </div>

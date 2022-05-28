@@ -8,13 +8,13 @@ import {  faBox } from '@fortawesome/free-solid-svg-icons';
 const Prefer = () => {
     return (
         <div>
-            <div className='flex justify-center'>
+            <div className='flex justify-center mt-12'>
             <h2 className='text-4xl space-x-1 uppercase font-bold mx-4'>Why Prefer</h2>
             <h1 className='text-4xl mt-20 uppercase font-bold text-orange-400 mb-8 mt-0'><span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-400 relative inline-block mr-2">
             <span class="relative text-white">Annaba</span>
             </span>Hand Tools</h1> <h2 className='text-4xl uppercase font-bold mx-4'>Manufacturer Bangladesh </h2>
             </div>
-           <div className='flex justify-evenly'>
+           <div className='flex justify-evenly mb-8 mx-4 p-5 bg-slate-400 text-white rounded-lg'>
            <div>
             <p className='text-6xl my-4'><FontAwesomeIcon icon={faTruck} /></p> <p className='justify-center'>Competitive pricing timming deliveries</p>
             </div>

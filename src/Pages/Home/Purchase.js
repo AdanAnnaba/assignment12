@@ -44,7 +44,7 @@ const Purchase = ({single}) => {
         <div className='grid grid-cols-1 md:grid-cols-2'>
         <div>
         <h3 class="text-2xl font-bold">{name}</h3>
-        <img className='w-40 ' src={image} alt="" />
+        <div><img className='w-full ' src={image} alt="" /></div>
         <p class="py-6">Available Qty: {aquantity}</p>
         <p class="py-6">Price: {mquantity}$</p>
         <p class="py-6">{description}</p>
@@ -57,7 +57,7 @@ const Purchase = ({single}) => {
         <input type="text" placeholder="Type here" class="input w-full max-w-xs mb-3" />
       </div>
         </div>
-        <input type="submit" value="submit" class="btn btn-primary" />
+        <input type="submit" value="submit" class="btn bg-orange-300 border-0" />
         </form>
   </div>
 </div>
