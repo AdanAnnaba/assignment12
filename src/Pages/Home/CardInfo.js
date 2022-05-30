@@ -7,7 +7,7 @@ const CardInfo = () => {
     const [products, setProducts] = useState([])
     const [single, setSingle] = useState(null)
     useEffect(()=>{
-        axios.get(`https://salty-waters-02832.herokuapp.com/product`)
+        axios.get(`http://localhost:5000/product`)
         .then(res=>{
             const data = res.data;
             setProducts(data);
@@ -15,7 +15,6 @@ const CardInfo = () => {
     },[])
     return (
         <div>
-            <p>data: {products.length}</p>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-2 ml-12 mt-3'>
             
             {

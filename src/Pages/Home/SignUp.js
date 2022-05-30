@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Token from '../Hooks/Token';
 
@@ -37,6 +37,7 @@ const [token] = Token(user || guser)
 
   const onSubmit = data => {
     createUserWithEmailAndPassword(data.email, data.password)
+    Navigate('/home')
   }
   
     return (

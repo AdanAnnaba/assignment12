@@ -16,6 +16,7 @@ import Purchase from './Pages/Home/Purchase';
 import Profile from './Pages/Home/Profile';
 import NotFound from './Pages/Home/NotFound';
 import Blogs from './Pages/Home/Blogs';
+import AllUser from './Pages/Home/AllUser';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path='reviews' element={<Reviews></Reviews>}></Route>
           <Route path='profile' element={<Profile></Profile>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='allusers' element={<AllUser></AllUser>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
