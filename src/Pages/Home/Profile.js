@@ -41,7 +41,7 @@ const Profile = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name{purchaseproduct.length}</th>
+              <th>Name</th>
               <th>Email</th>
               <th>Product Name</th>
             </tr>
@@ -50,9 +50,9 @@ const Profile = () => {
            {
               purchaseproduct.map(p=> <tr>
                 <th>1</th>
-                <td>Cy Ganderton</td>
+                <td>{p.displayName}</td>
                 <td>{p.email}</td>
-                <td>Blue</td>
+                <td>{p.name}</td>
               </tr>) 
            }
            
