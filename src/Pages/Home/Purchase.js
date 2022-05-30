@@ -18,7 +18,7 @@ const Purchase = ({single}) => {
         email: user.email
       }
       console.log(purchasedata);
-      axios.post(`http://localhost:5000/booking`,(purchasedata))
+      axios.post(`hhttps://salty-waters-02832.herokuapp.com/booking`,(purchasedata))
       .then(res=>{
         const data = res.data;
         if(data.success){

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 const AllUser = () => {
     const [allusers, setAllusers] = useState('');
     useEffect(()=>{
-        axios.get(`http://localhost:5000/user`)
+        axios.get(`https://salty-waters-02832.herokuapp.com/user`)
         .then(res=>{
             const data = res.data;
             console.log(data);

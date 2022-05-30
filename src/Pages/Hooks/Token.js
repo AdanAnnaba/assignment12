@@ -8,7 +8,7 @@ const Token = user =>{
         const email = user?.user?.email;
         const presentUser ={email:email};
         if(email){
-            axios.put(`http://localhost:5000/user/${email}`,(presentUser))
+            axios.put(`https://salty-waters-02832.herokuapp.com/user/${email}`,(presentUser))
             .then(res=>{
             const data = res.data;
             const finalToken = data.token;

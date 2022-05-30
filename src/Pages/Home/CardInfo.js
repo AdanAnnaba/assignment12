@@ -7,7 +7,7 @@ const CardInfo = () => {
     const [products, setProducts] = useState([])
     const [single, setSingle] = useState(null)
     useEffect(()=>{
-        axios.get(`http://localhost:5000/product`)
+        axios.get(`https://salty-waters-02832.herokuapp.com/product`)
         .then(res=>{
             const data = res.data;
             setProducts(data);
