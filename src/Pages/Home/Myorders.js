@@ -52,7 +52,7 @@ const Profile = () => {
                 <th>{index+1}</th>
                 <td>{p.displayName}</td>
                 <td>{p.email}</td>
-                <td>{p.name}</td>
+                <td>{p.productName}</td>
               </tr>) 
            }
            
