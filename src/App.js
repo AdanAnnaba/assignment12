@@ -13,10 +13,10 @@ import SignUp from './Pages/Home/SignUp';
 import ReqAuth from './Pages/Home/ReqAuth';
 import Reviews from './Pages/Home/Reviews';
 import Purchase from './Pages/Home/Purchase';
-import Profile from './Pages/Home/Profile';
 import NotFound from './Pages/Home/NotFound';
 import Blogs from './Pages/Home/Blogs';
 import AllUser from './Pages/Home/AllUser';
+import Myorders from './Pages/Home/Myorders';
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
         <Route path='/dashboard' element={<ReqAuth><Dashboard></Dashboard></ReqAuth>}>
           <Route index element={<AllProducts></AllProducts>}></Route>
           <Route path='reviews' element={<Reviews></Reviews>}></Route>
-          <Route path='profile' element={<Profile></Profile>}></Route>
+          <Route path='myorders' element={<Myorders></Myorders>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='allusers' element={<AllUser></AllUser>}></Route>
         </Route>

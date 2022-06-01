@@ -2,17 +2,26 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const AllUser = () => {
-    const [allusers, setAllusers] = useState('');
+    const [users, setUsers] = useState('');
+
     useEffect(()=>{
-        axios.get(`https://salty-waters-02832.herokuapp.com/user`)
+        axios.get('https://salty-waters-02832.herokuapp.com/users')
         .then(res=>{
             const data = res.data;
-            console.log(data);
+            setUsers({data});
+            console.log(users);
         })
     },[])
+
+
     return (
         <div>
-            <h1>hello</h1>
+          {
+              users.map(user=>
+                  <p>Email: {user.email}</p>
+              )
+          }
+           
         </div>
     );
 };

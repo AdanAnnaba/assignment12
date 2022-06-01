@@ -48,8 +48,8 @@ const Profile = () => {
           </thead>
           <tbody>
            {
-              purchaseproduct.map(p=> <tr>
-                <th>1</th>
+              purchaseproduct.map((p,index)=> <tr>
+                <th>{index+1}</th>
                 <td>{p.displayName}</td>
                 <td>{p.email}</td>
                 <td>{p.name}</td>
