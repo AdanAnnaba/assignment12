@@ -1,8 +1,8 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
-const User = ({user,index}) => {
+const User = ({user,index,refetch}) => {
   const {email,role} = user;
-  console.log(role);
   const createAdmin = () =>{
     fetch(`https://salty-waters-02832.herokuapp.com/user/admin/${email}`,{
       method: 'PUT',
@@ -12,7 +12,10 @@ const User = ({user,index}) => {
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log(data);
+      refetch();
+      toast.success("Created an admin successfully", {
+        position: toast.POSITION.TOP_RIGHT
+      });
     })
   }
 

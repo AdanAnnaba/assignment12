@@ -4,7 +4,7 @@ import Loading from './Loading';
 import User from './User';
 
 const AllUser = () => {
-   const {data: users, isLoading} = useQuery('users', ()=> fetch('https://salty-waters-02832.herokuapp.com/user',{
+   const {data: users, isLoading, refetch} = useQuery('users', ()=> fetch('https://salty-waters-02832.herokuapp.com/user',{
      method: 'GET',
      headers:{
        authorization: `Bearer ${localStorage.getItem('accesstoken')}`
@@ -32,7 +32,7 @@ const AllUser = () => {
               </thead>
               <tbody>
                {
-                    users.map((user,index)=><User key={user._id} user={user} index={index}></User>
+                    users.map((user,index)=><User key={user._id} user={user} index={index} refetch={refetch}></User>
                     )
                }
               </tbody>
