@@ -1,9 +1,10 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from './Loading';
 
-const Profile = () => {
+const Myorders = () => {
 
     const [user, loading, error] = useAuthState(auth);
     const [purchaseproduct, setPurchaseproduct] = useState([]);
@@ -17,7 +18,6 @@ const Profile = () => {
             }
         })
         .then(res=>{
-            console.log('ABC',res)
             return res.json()
         
         })
@@ -33,6 +33,17 @@ const Profile = () => {
       
     },[user])
 
+    const deleteID = async(id)=>{
+      const {data} = await axios.delete(`http://localhost:5000/user`,id)
+      console.log(data);
+      if(data.deletedCount>0){
+        const remaining = purchaseproduct.filter(data=>data._id !== id);
+        setPurchaseproduct(remaining)
+      }
+   
+  }
+      
+
 
     return (
         <div class="overflow-x-auto">
@@ -40,10 +51,11 @@ const Profile = () => {
          
           <thead>
             <tr>
-              <th></th>
+              <th>SL</th>
               <th>Name</th>
               <th>Email</th>
               <th>Product Name</th>
+              <th>For Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -53,6 +65,7 @@ const Profile = () => {
                 <td>{p.displayName}</td>
                 <td>{p.email}</td>
                 <td>{p.productName}</td>
+                <td><button className='btn btn-warning' onClick={()=>deleteID(p._id)}>Delete</button></td>
               </tr>) 
            }
            
@@ -62,4 +75,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default Myorders;
