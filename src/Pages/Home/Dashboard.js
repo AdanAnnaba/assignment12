@@ -1,9 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
+import AdminAuth from '../Hooks/AdminAuth';
+
 
 
 const Dashboard = () => {
-  
+  const [user] = useAuthState(auth)
+  const [admin] = AdminAuth(user)
 
 
     return (
@@ -24,7 +29,7 @@ const Dashboard = () => {
       <li><Link to='/dashboard/myorders'>My Orders</Link></li>
       <li><Link to='/dashboard/reviews'>Add a review</Link></li>
       <li><Link to='/dashboard/addproduct'>Add Products</Link></li>
-      <li><Link to='/dashboard/allusers'>All User</Link></li>
+      {admin && <li><Link to='/dashboard/allusers'>All User</Link></li>}
     </ul>
   
   </div>
