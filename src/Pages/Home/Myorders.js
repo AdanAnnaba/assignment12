@@ -34,7 +34,12 @@ const Myorders = () => {
     },[user])
 
     const deleteID = id=>{
-      axios.delete(`https://salty-waters-02832.herokuapp.com/user/${id}`,{authorization: `Bearer ${localStorage.getItem('accesstoken')}`})
+      fetch(`https://salty-waters-02832.herokuapp.com/booking/${id}`,{
+        method: 'DELETE',
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('accesstoken')}`
+        }
+      })
       .then(res=>{
         const data = res.data;
         console.log(data);
