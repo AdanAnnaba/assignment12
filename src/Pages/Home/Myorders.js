@@ -33,14 +33,12 @@ const Myorders = () => {
       
     },[user])
 
-    const deleteID = async(id)=>{
-      const {data} = await axios.delete(`http://localhost:5000/user`,id)
-      console.log(data);
-      if(data.deletedCount>0){
-        const remaining = purchaseproduct.filter(data=>data._id !== id);
-        setPurchaseproduct(remaining)
-      }
-   
+    const deleteID = id=>{
+      axios.delete(`https://salty-waters-02832.herokuapp.com/user${id}`,{authorization: `Bearer ${localStorage.getItem('accesstoken')}`})
+      .then(res=>{
+        const data = res.data;
+        console.log(data);
+    })
   }
       
 
