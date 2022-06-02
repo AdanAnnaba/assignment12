@@ -2,9 +2,9 @@ import React from 'react';
 
 const User = ({user,index}) => {
   const {email,role} = user;
-  console.log(email);
+  console.log(role);
   const createAdmin = () =>{
-    fetch(`https://salty-waters-02832.herokuapp.com/user/admin${email}`,{
+    fetch(`https://salty-waters-02832.herokuapp.com/user/admin/${email}`,{
       method: 'PUT',
       headers: {
         authorization: `Bearer ${localStorage.getItem('accesstoken')}`
