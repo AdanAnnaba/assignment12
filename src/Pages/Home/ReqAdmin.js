@@ -14,7 +14,7 @@ const ReqAdmin = ({children}) => {
         return <Loading></Loading>
     }
     
-    if(!user || admin){
+    if(!user || !admin){
         return <Navigate to='/login' state={{from: location}} replace></Navigate>
     }
     return children;
