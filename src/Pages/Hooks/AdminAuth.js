@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 
 const AdminAuth = user =>{
     const [admin, setAdmin] = useState(false);
+    const [adminLoading, setAdminLoading] = useState(true);
     useEffect(()=>{
         const email = user?.email;
         if(email){
@@ -13,10 +14,11 @@ const AdminAuth = user =>{
     })
     .then(res=>res.json())
     .then(data=>{
-        setAdmin(data.admin)
+        setAdmin(data.admin);
+        setAdminLoading(false)
     })
         }
     },[user])
-    return [admin]
+    return [admin, adminLoading]
 }
 export default AdminAuth;

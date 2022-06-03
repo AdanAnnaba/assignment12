@@ -17,6 +17,7 @@ import NotFound from './Pages/Home/NotFound';
 import Blogs from './Pages/Home/Blogs';
 import AllUser from './Pages/Home/AllUser';
 import Myorders from './Pages/Home/Myorders';
+import ReqAdmin from './Pages/Home/ReqAdmin';
 
 function App() {
   return (
@@ -33,8 +34,8 @@ function App() {
           <Route index element={<AllProducts></AllProducts>}></Route>
           <Route path='reviews' element={<Reviews></Reviews>}></Route>
           <Route path='myorders' element={<Myorders></Myorders>}></Route>
-          <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
-          <Route path='allusers' element={<AllUser></AllUser>}></Route>
+          <Route path='addproduct' element={<ReqAdmin><AddProduct></AddProduct></ReqAdmin>}></Route>
+          <Route path='allusers' element={<ReqAdmin><AllUser></AllUser></ReqAdmin>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
