@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const AdminAuth = user =>{
     const [admin, setAdmin] = useState(false);
     useEffect(()=>{
-        const email = user?.eamil;
+        const email = user?.email;
         if(email){
             fetch(`https://salty-waters-02832.herokuapp.com/admin/${email}`,{
       method: 'GET',
