@@ -50,7 +50,7 @@ const Myorders = () => {
           <thead>
             <tr>
               <th>SL</th>
-              <th>Name</th>
+              <th>Transaction ID</th>
               <th>Email</th>
               <th>Product Name</th>
               <th>For Delete</th>
@@ -60,7 +60,7 @@ const Myorders = () => {
            {
               purchaseproduct.map((p,index)=> <tr>
                 <th>{index+1}</th>
-                <td>{p.displayName}</td>
+                <td>{p._id}</td>
                 <td>{p.email}</td>
                 <td>{p.productName}</td>
                 <td><button className='btn btn-warning' onClick={()=>deleteID(p._id)}>Delete</button></td>
