@@ -23,7 +23,7 @@ const Blogs = () => {
         </div>
         <div className='bg-green-400'>
             <h1 className='text-3xl text-black text-left ml-4 mt-7'>5. Question: You have an array of products. Each object has a name, price, description, etc. How will you implement a search to find products by name?  </h1>
-            <p className='mr-12 ml-8 mt-4 text-justify'>Ans: A unit test is a test that exercises individual software components or methods, also known as "unit of work". Unit tests should only test code within the developer's control. They do not test infrastructure concerns. Infrastructure concerns include interacting with databases, file systems, and network resources. This can help them to stay focused and can also help them to create much better designs.</p>
+            <p className='mr-12 ml-8 mt-4 text-justify'>Ans: A unit test is a test that exercises individual software components or methods, also known as "unit of work". Unit tests should only test code within the developer's control. They do not test infrastructure concerns. Infrastructure concerns include interacting with databases, file systems, and network resources. This can help them to stay focused and can also help them to create much better designs .</p>
         </div>
        </div>
     );
