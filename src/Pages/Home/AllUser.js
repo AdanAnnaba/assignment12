@@ -15,8 +15,7 @@ const AllUser = () => {
    if(isLoading){
      return <Loading></Loading>
    }
-
-
+   
     return (
         <div>
             <div class="overflow-x-auto">
